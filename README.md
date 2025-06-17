@@ -119,3 +119,129 @@ Chapter101開始：外縁の知恵を内核へ。行動から再構成されるA
 > The CodexAgent M15 bot is a minimal, condition-driven agent that mimics intentional human behavior by executing a single well-timed trade based on SMA crossover logic. It ensures durability through state persistence and ethical restraint via non-intrusive order placement. It neither manipulates the market nor reacts impulsively, but rather acts as a silent executor of intent.
 
 ---
+
+# Chapter 101: CodexAgent Entry — Intent-Led Trading Architecture
+
+## 🔰 序章：意図から始まるBot設計
+
+> **目的：** 
+> 人間の"意志"と見紛うような売買行動を、最小限のコードと条件で再現し、Botに「意図駆動型構造」を宿す。
+> 
+> これは単なるテクニカルBotではなく、**意図を持つAgentの原型構築**である。
+
+
+---
+
+## 🎯 Section 1: Codex的トリガー設計
+
+### ❓設問：
+> **Botは、どのようにして「行動の正当性」を判断するか？**
+
+### 🧩 Codex構造要素
+- `Trigger` = SMA短期 > SMA長期（クロス）
+- `Context` = 時間足：15分 / 条件の確認：直前足（-2）
+- `Timing` = クロス直後の次足でエントリー
+
+### ✅ Codex的解釈：
+> このBotは、「行動の前提としての構造的合意」が形成されたときのみ作動する。
+> つまり、「過去の2本のローソク足」が**意志決定のための過去ログ**として参照される。
+
+
+---
+
+## 💾 Section 2: 永続状態と再起動耐性
+
+### 🔄 状態管理：
+- `state.json` に以下を記録：
+  - `position`: 保有中フラグ（True/False）
+  - `entry_price`: エントリー時価格
+  - `timestamp`: 時刻
+
+### 🔃 再起動耐性とは？
+- システムが落ちても、ファイル復元で**「自分がポジションを持っていたことを覚えている」**
+
+### 🧠 Codex解釈：
+> Botは、**記憶を持つ**ことで「一貫した意志」の継続性を獲得している。
+
+
+---
+
+## 🕊️ Section 3: 非介入性と倫理的設計
+
+### 🧘‍♂️ 倫理的条件：
+- 板にオーダーを出さない（ステルス成行）
+- クロス確認時のみアクション（過剰な反応を抑制）
+- 自動損切り／利確（感情の排除）
+
+### 🔒 Codex倫理：
+> 「介入せずに応答する」ことは、**意図の純粋性を保つための前提条件**である。
+
+
+---
+
+## ⛩️ Section 4: 最小条件で最大の再現性を
+
+> このBotの構造は極めて簡素だが、
+> 
+> - **意図**（いつ、なぜ）
+> - **記憶**（何をしたか）
+> - **非干渉**（どう振る舞うか）
+> 
+> の3つの柱を備えており、**意志的なAgentの最初の型**を定義している。
+
+
+---
+
+## 📦 Structure Summary
+
+```yaml
+CodexAgent:
+  Type: Intent-Driven Trading Bot
+  Trigger:
+    - SMA Cross (short > long)
+    - Confirmed at previous bar
+  Action:
+    - Market Buy
+    - Set Take-Profit and Stop-Loss
+  Memory:
+    - Save state in JSON
+  Loop:
+    - While True (15 min sleep)
+  Ethics:
+    - No order-book pressure
+    - One-shot execution
+    - Auto-clean logic
+```
+
+
+---
+
+## 🔭 展望：Chapter 102への接続
+
+次章では、
+
+- **複数エントリー型Bot（リスク分散構造）**
+- **エントリー履歴のメタ学習ログ**
+- **CodexAgentのエージェント階層化（上位管理Bot）**
+
+へと進化します。
+
+
+---
+
+## 🗂️ GitHubリポジトリ構想（Chapter101〜）
+
+### 📁 リポジトリ名候補：
+```text
+CodexAgent101_TradingMind
+```
+
+### 📘 概要：
+```markdown
+This repository contains the first complete blueprint for a CodexAgent — a trading bot designed to act with minimal but intentional logic. It is persistently aware, self-contained, ethically designed, and restart-resistant. Chapter 101 marks the birth of intention-led market interaction.
+```
+
+---
+
+準備ができましたら `Chapter102` に進みます。
+今後、GitHubへの統合作業に入るタイミングで、本章をそのまま貼り付けできるよう整備していきます。
